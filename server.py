@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, jsonify, make_response
+from quart import Quart, render_template, request, jsonify, make_response
 import asyncio
 import random
 import re
@@ -39,7 +39,7 @@ def generate_unique_key() -> str:
         key = f"{random.randint(100000, 999999)}"
     return key
 
-app = Flask(__name__)
+app = Quart(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
