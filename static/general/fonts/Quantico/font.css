@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'Quantico';
+	src: url('Quantico-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Quantico';
+	src: url('Quantico-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+

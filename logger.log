@@ -1,0 +1,51 @@
+2023-08-24 15:38:31.207 | ERROR    | __main__:authorization:81 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 15:58:27.695 | ERROR    | __main__:authorization:85 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 15:59:09.692 | ERROR    | __main__:authorization:85 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 15:59:13.306 | ERROR    | __main__:authorization:85 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 16:01:49.648 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 16:04:09.590 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 16:09:42.042 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 16:15:51.010 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 16:16:01.450 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 17:06:18.759 | ERROR    | __main__:authorization:86 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 17:07:25.166 | ERROR    | __main__:authorization:87 - 403, message='Forbidden', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 17:28:13.121 | ERROR    | __main__:authorization:84 - 'bool' object is not subscriptable
+2023-08-24 17:28:13.121 | DEBUG    | __main__:authorization:85 - False
+2023-08-24 17:31:40.157 | ERROR    | __main__:authorization:85 - 'bool' object is not subscriptable
+2023-08-24 17:55:38.952 | ERROR    | __main__:authorization:83 - not all arguments converted during string formatting
+2023-08-24 17:57:15.140 | ERROR    | __main__:authorization:83 - not all arguments converted during string formatting
+2023-08-24 17:58:51.851 | ERROR    | __main__:authorization:83 - Failed to authenticate. Make sure username and password are correct. `auth_failure`.
+2023-08-24 18:31:56.388 | ERROR    | __main__:mfa:109 - name 'logger' is not defined
+2023-08-24 18:32:08.036 | ERROR    | __main__:mfa:109 - 400, message='Bad Request', url=URL('https://auth.riotgames.com/api/v1/authorization')
+2023-08-24 18:32:44.932 | ERROR    | __main__:authorization:83 - Failed to authenticate. Make sure username and password are correct. `auth_failure`.
+2023-08-24 18:32:58.039 | ERROR    | auth:handle_multifactor:289 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:47:23.146 | ERROR    | auth:handle_multifactor:291 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:51:29.576 | ERROR    | auth:handle_multifactor:279 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:51:29.693 | ERROR    | auth:handle_multifactor:287 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:51:29.806 | ERROR    | auth:handle_multifactor:295 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/google')
+2023-08-24 18:51:29.916 | ERROR    | auth:handle_multifactor:295 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/xbox')
+2023-08-24 18:51:30.025 | ERROR    | auth:handle_multifactor:295 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/apple')
+2023-08-24 18:51:30.135 | ERROR    | auth:handle_multifactor:295 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/facebook')
+2023-08-24 18:51:30.247 | ERROR    | auth:handle_multifactor:299 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/mfa/v2/purge-and-signout')
+2023-08-24 18:53:34.581 | ERROR    | auth:handle_multifactor:280 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:53:34.683 | ERROR    | auth:handle_multifactor:288 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 18:53:34.782 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/google')
+2023-08-24 18:53:34.886 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/xbox')
+2023-08-24 18:53:34.984 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/apple')
+2023-08-24 18:53:35.081 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/facebook')
+2023-08-24 18:53:35.185 | ERROR    | auth:handle_multifactor:300 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/mfa/v2/purge-and-signout')
+2023-08-24 19:03:13.788 | ERROR    | __main__:authorization:83 - not enough values to unpack (expected 2, got 1)
+2023-08-24 19:03:37.690 | ERROR    | __main__:authorization:83 - not enough values to unpack (expected 2, got 1)
+2023-08-24 19:04:52.361 | ERROR    | auth:handle_multifactor:280 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 19:04:52.471 | ERROR    | auth:handle_multifactor:288 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/account/v1/user/email')
+2023-08-24 19:04:52.581 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/google')
+2023-08-24 19:04:52.691 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/xbox')
+2023-08-24 19:04:52.793 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/apple')
+2023-08-24 19:04:53.037 | ERROR    | auth:handle_multifactor:296 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/facebook')
+2023-08-24 19:04:53.145 | ERROR    | auth:handle_multifactor:300 - 403, message='Forbidden', url=URL('https://account.riotgames.com/api/mfa/v2/purge-and-signout')
+2023-08-24 19:08:07.134 | DEBUG    | auth:handle_multifactor:281 - {"email":"tiu*********@ram****.ru","mode":"update","message":"email_verification_pending"}
+2023-08-24 19:08:08.270 | ERROR    | auth:handle_multifactor:299 - 500, message='Internal Server Error', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/google')
+2023-08-24 19:08:08.376 | ERROR    | auth:handle_multifactor:299 - 502, message='Bad Gateway', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/xbox')
+2023-08-24 19:08:09.496 | ERROR    | auth:handle_multifactor:299 - 500, message='Internal Server Error', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/apple')
+2023-08-24 19:08:10.667 | ERROR    | auth:handle_multifactor:299 - 500, message='Internal Server Error', url=URL('https://account.riotgames.com/api/links/v1/federated-identities/facebook')
+2023-08-24 20:49:11.847 | ERROR    | __main__:authorization:83 - Failed to authenticate. Make sure username and password are correct. `auth_failure`.

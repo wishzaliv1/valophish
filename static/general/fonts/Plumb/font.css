@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Plumb';
+    src: url('Plumb-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Plumb';
+    src: url('Plumb-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
