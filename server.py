@@ -110,7 +110,3 @@ async def mfa():
         response = await make_response({'ok': 'false'})
         response.status_code = 200
         return response
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
-
